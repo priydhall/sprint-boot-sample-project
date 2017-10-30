@@ -1,7 +1,7 @@
 
 ### What is this repository for? ###
 
-For Cefalo Test Project 
+Simple News Manager using spring boot 
 
 ### Tech: ###
 Tech stack used behind this test project :
@@ -42,11 +42,7 @@ Things you need to have installed to run the test project.
      -  Go to  `http://localhost:8080/` to see the application.
   
 
-### Demo Videos: ###
- - [Demo Video Phase 1](https://drive.google.com/file/d/0BzktpfvJnNU_X19rT0QxcloxZEE/view?usp=sharing)
- - [Demo Video Phase 2](https://drive.google.com/file/d/0BzktpfvJnNU_TGplNFZ0OUZxSVk/view?usp=sharing) 
- - [Demo Video Phase 3](https://drive.google.com/file/d/0BzktpfvJnNU_Tmc3eEdfdHJpQUE/view?usp=sharing) 
-  
+ 
 ### Limitations / What could be improved: ###
 -   More Unit/Integration tests.
 -   More granular exception handling.
