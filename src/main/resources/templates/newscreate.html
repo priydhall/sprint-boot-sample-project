@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cefalo Test Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/toastr.css}" />
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"> </script>
+    <script type="text/javascript" th:src="@{/js/jquery.validate.min.js}"> </script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"> </script>
+    <script type="text/javascript" th:src="@{/js/toastr.min.js}"> </script>
+    <script type="text/javascript" th:src="@{/js/createnews.js}"></script>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"> </div>
+
+<div class="container-fluid">
+    <div class="row ">
+        <div class="container">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <form id="news-create-form" method="post">
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="newsTitle">
+                            News Title
+                        </label>
+                        <input class="form-control" id="newsTitle" name="newsTitle"
+                               placeholder="Your news title goes here." type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="newsBody">
+                            News Body
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <textarea class="form-control" cols="40" id="newsBody" name="newsBody"
+                                  placeholder="Your news body goes here." rows="10"></textarea>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="newsAuthor">
+                            Author Name
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <input class="form-control" id="newsAuthor" name="newsAuthor"
+                               placeholder="News author name goes here" type="text"/>
+                    </div>
+                    <div class="form-group ">
+                        <label class="control-label requiredField" for="newsPublishDate">
+                            Publish Date
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <input class="form-control" id="newsPublishDate" name="newsPublishDate"
+                               placeholder="News publish date goes here" type="date" />
+                    </div>
+
+                    <div class="form-group">
+                        <div>
+                            <button class="btn btn-primary " name="submit" type="submit">
+                                Create News
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

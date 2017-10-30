@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cefalo Test Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/toastr.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/jquery.validate.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/toastr.min.js}"></script>
+
+</head>
+<body>
+
+
+<div th:replace="fragments/header :: header"></div>
+
+<div th:if="${newsResponse.statusCode=='204'}">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="mt-5"></h1>
+            <p class="lead"><span th:text="${newsResponse.message}"></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div th:if="${newsResponse.statusCode == '500'}">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1 class="mt-5"></h1>
+            <p class="lead"><span th:text="${newsResponse.message}"></span></p>
+        </div>
+    </div>
+</div>
+
+
+<div th:if="${not #lists.isEmpty(newsResponse.news)}">
+    <div class="container">
+        <div class="table-responsive">
+            <span th:text="${newsResponse.message}"></span>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>News Id</th>
+                    <th>News Title</th>
+                    <th>News Body</th>
+                    <th>News Author</th>
+                    <th>News Publish Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td th:text="${newsResponse.news[0].newsId}">id</td>
+                    <td th:text="${newsResponse.news[0].newsTitle}">title</td>
+                    <td th:text="${newsResponse.news[0].newsBody}">body</td>
+                    <td th:text="${newsResponse.news[0].newsAuthor}">author</td>
+                    <td th:text="${newsResponse.news[0].newsPublishDate}">author</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
